@@ -5,8 +5,10 @@ import shutil
 from datetime import datetime
 
 # CONFIGURATION
+#change the PORT value to match the CPP server config
 CPP_SERVER = os.getenv("CPP_SERVER", "http://127.0.0.1:8081")
-NGINX_SERVER = os.getenv("NGINX_SERVER", "http://localhost:9092")
+#change the PORT value to match the NGINX server config
+NGINX_SERVER = os.getenv("NGINX_SERVER", "http://localhost:9092") 
 LOG_DIR = "test_results"
 
 # Headers to ignore in comparison (dynamic or software-specific)
