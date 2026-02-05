@@ -38,6 +38,13 @@ tests = [
     ("test_url_decoding", "GET", "/my%20file.html", {}, None),
     ("test_traversal", "GET", "/../../etc/passwd", {}, None),
     ("test_lowercase_method", "get", "/", {}, None),
+    ("test_head_root", "HEAD", "/", {}, None),
+    ("test_post_json", "POST", "/cgi-bin/hello.py", {"Content-Type": "application/json"}, '{"name": "world"}'),
+    ("test_method_not_allowed", "PUT", "/index.html", {}, "some data"),
+    ("test_static_query", "GET", "/index.html?foo=bar", {}, None),
+    ("test_image_png", "GET", "/images/logo.png", {}, None),
+    ("test_418", "GET", "/418.html", {}, None),
+    ("test_folder_redirect", "GET", "/images", {}, None),
     #("test_max_url_fail", "GET", "/" + ("x" * 10000), {}, None), - this is breaking CPP server
     #("test_never_cgi",  "GET", "/cgi-bin/never.py", {}, None), - this is breaking NGINX
 ]
